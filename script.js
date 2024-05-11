@@ -239,14 +239,15 @@ function detectWebcam(callback) {
 }
 
 if (isMobile()) {
-  alert("This site does not work on mobile, sorry :(");
+  alert(
+    "This site might not work on mobile. For an ideal experience use a larger device.",
+  );
 } else {
   detectWebcam((hasWebcam) => {
     if (!hasWebcam) {
       alert("This site needs a webcam to function, sorry :(");
-    } else {
-      startEyetracking();
-      calibrateEyetracking(10, startTheremin);
     }
   });
 }
+startEyetracking();
+calibrateEyetracking(10, startTheremin);
